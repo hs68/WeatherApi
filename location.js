@@ -13,6 +13,7 @@ const replace1=(tempdata,val)=>{
     return temperature;
 
 };
+//
 const server = http.createServer((req, res) => {
     if (req.url == "/") {
         //const file = fs.writeFile('home.html');
