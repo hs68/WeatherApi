@@ -1,0 +1,15 @@
+{
+  "name": "weatherapi",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "location.js",
+  "scripts": {
+    "dev": "nodemon location.js"
+  },
+  "author": "Harsh",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "requests": "^0.3.0"
+  }
+}

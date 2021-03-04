@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="box">
+        <div class="wave-1"></div>
+        <div class="wave-2"></div>
+        <div class="wave-3"></div>
+        <div id="weathercondition">
+            <i class="fa fa-sun" aria-hidden="true" style="color: orange;"></i>
+        </div>
+        <div class="info">
+            <h2 id="location"> <i class="fa fa-street-view" aria-hidden="true" style="color: orange;"></i>{%name%}</h2>
+            <p id="date">WED |OCT23 |10.49AM</p>
+            <h1 class="temp">{%temp%}C</h1>
+            <h3 class="tempmin_max">Min {%temp_min%} | Max {%temp_max%}</h3>
+        </div>
+
+
+    </div>
+    <script>
+        const currdate=document.getElementById("date");
+        var daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var month= ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+        let date= new Date();
+        const getcurrentday=()=>{
+            const day=date.getDay();
+            console.log(daysOfTheWeek[day]);
+            return daysOfTheWeek[day];
+        }
+        const getcurrenttime=()=>{
+            let hours=date.getHours();
+            let minutes=date.getMinutes();
+            let mont=date.getMonth();
+            let periods=String("AM");
+            if(hours>11)
+            {
+                hours=hours-12;
+                periods="PM";
+            }
+            console.log(hours);
+            console.log(minutes,mont,periods);
+            console.log(`${month[mont]} | ${hours} | ${minutes} | ${periods}`);
+            return `${month[mont]} | ${hours} | ${minutes} | ${periods}`;
+
+        }
+        currdate.innerHTML=getcurrentday()+" | "+getcurrenttime();
+    </script>
+</body>
+
+</html>
